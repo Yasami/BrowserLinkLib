@@ -1,0 +1,44 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <title><#= _model.Title #></title>
+  <script src="/Scripts/jquery-1.6.4.min.js"></script>
+  <script src="/Scripts/jquery.signalR-2.0.0-beta2.min.js"></script>
+  <script src="/signalr/hubs"></script>
+  <script type="text/javascript">
+  <!--
+	var proxy = $.connection.browserLinkHub;
+	proxy.client.SendMessage = function(msg) {
+		$('#preview').html(msg);
+	};
+	$.connection.hub.logging = true;
+	$.connection.hub.start().done(function() {
+		$('#send').click(function() {
+			proxy.server.send('from client');
+		});
+	});
+  -->
+  </script>
+  <title>Model</title>
+</head>
+<body>
+T4
+<button id="send">Send</button>
+<div id="preview">
+</div>
+</body>
+</html>
+<#+
+		private readonly LinkedPageModel _model;
+
+		public LinkedPage(LinkedPageModel model)
+		{
+			_model = model;
+		}
+#>
