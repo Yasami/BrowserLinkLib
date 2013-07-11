@@ -18,18 +18,12 @@
 		$('#preview').html(msg);
 	};
 	$.connection.hub.logging = true;
-	$.connection.hub.start().done(function() {
-		$('#send').click(function() {
-			proxy.server.send('from client');
-		});
-	});
+	$.connection.hub.start();
   -->
   </script>
   <title>Model</title>
 </head>
 <body>
-T4
-<button id="send">Send</button>
 <div id="preview">
 </div>
 </body>
