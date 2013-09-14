@@ -10,12 +10,11 @@ namespace Falys.BrowserLinkLib
 			// Turn cross domain on 
 			var config = new HubConfiguration
 			{
-				EnableCrossDomain = true,
 				EnableJavaScriptProxies = true,
 				EnableDetailedErrors = true
 			};
 			// This will map out to http://localhost:8080/signalr by default
-			app.MapHubs(config);
+			app.MapSignalR(config);
 			app.UseNancy();
 		}
 	}
